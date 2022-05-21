@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.swing.JOptionPane;
 
-import convertFile.ConvertXMLtoText;
 import kcore.plugin.alg.param.KcoreParameters;
 import kcore.plugin.biomarker.Biomaker;
 import kcore.plugin.biomarker_parallel.Biomarker_algorithm_parallel;
