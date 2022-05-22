@@ -251,11 +251,11 @@ public class KcoreParallel extends AbstractTask {
 			// sort map by value
 			Map<String, Integer> sortedMap = MapComparator.sortByValue(degrees);
 
-			lines.add("time start: " + start + " - " + "time end: " + end);
 			lines.add("Node\tKCore");
 			for (Map.Entry<String, Integer> entry : sortedMap.entrySet()) {
 				lines.add(String.format("%s\t%d", entry.getKey().toString(), entry.getValue()));
 			}
+			lines.add("time start: " + start + " - " + "time end: " + end);
 			Files.write(path, lines);
 
 //			Files.write(path, lines);
@@ -281,7 +281,7 @@ public class KcoreParallel extends AbstractTask {
 	@SuppressWarnings("deprecation")
 	public void compute() {
 		if(device == "CPU") {
-			System.setProperty("com.aparapi.executionMode", "CPU");
+			System.setProperty("com.aparapi.executionMode", "JTP");
 		}
 		else {
 			System.setProperty("com.aparapi.executionMode", "GPU");

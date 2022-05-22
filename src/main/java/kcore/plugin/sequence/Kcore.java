@@ -232,20 +232,13 @@ public class Kcore extends AbstractTask {
 			// sort map by value
 			Map<String, Integer> sortedMap = MapComparator.sortByValue(kCore);
 
-			lines.add("time start: " + start + " - " + "time end: " + end);
 			lines.add("Node\tKCore");
 			for (Map.Entry<String, Integer> entry : sortedMap.entrySet()) {
 				lines.add(String.format("%s\t%d", entry.getKey().toString(), entry.getValue()));
 			}
+			lines.add("time start: " + start + " - " + "time end: " + end);
 			Files.write(path, lines);
 
-			// extend
-//			lines.add("Start\tEnd\tWeight");
-//			for (Edge edge : edgeList) {
-//				lines.add(String.format("%s\t%s\t%d", edge.getStartNode(), edge.getEndNode(), edge.getWeight()));
-//			}
-
-//			Files.write(path, lines);
 			Runtime rt = Runtime.getRuntime();
 			try {
 				Process p = rt.exec("notepad " + path.toString());

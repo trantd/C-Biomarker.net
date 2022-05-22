@@ -249,11 +249,11 @@ public class RCore extends AbstractTask {
 		List<String> lines = new ArrayList<>();
 		// sort map by value
 		sortedMap = MapComparator.sortByValue(rCore);
-		lines.add("time start: " + start + " - " + "time end: " + end);
 		lines.add("Node\tRCore");
 		for (Map.Entry<String, Integer> entry : sortedMap.entrySet()) {
 			lines.add(String.format("%s\t%d", entry.getKey(), entry.getValue() + 1));
 		}
+		lines.add("time start: " + start + " - " + "time end: " + end);
 
 		Files.write(path, lines);
 		Runtime rt = Runtime.getRuntime();

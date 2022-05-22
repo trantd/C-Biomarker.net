@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Checkbox;
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -129,6 +130,14 @@ public class KcoreParametersPanel extends JPanel implements ColumnCreatedListene
 				convert.writeFile(path + "\\" + arrString[arrString.length-1] + ".txt");
 				convert.setEdgeList(new ArrayList<>());
 			}
+			Desktop desktop = Desktop.getDesktop();
+	        File dirToOpen = null;
+	        try {
+	            dirToOpen = new File(path);
+	            desktop.open(dirToOpen);
+	        } catch (IllegalArgumentException iae) {
+	            System.out.println("File Not Found");
+	        }
 		} catch (final Exception e) {
 			e.printStackTrace(System.err);
 			JOptionPane.showMessageDialog(ServicesUtil.cySwingApplicationServiceRef.getJFrame(),

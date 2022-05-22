@@ -268,7 +268,7 @@ public class Biomarker_algorithm_parallel extends AbstractTask {
 	public void loadData() {
 		if(device == "CPU") {
 //			hcRea.setExecutionMode(Kernel.EXECUTION_MODE.JTP);
-			System.setProperty("com.aparapi.executionMode", "CPU");
+			System.setProperty("com.aparapi.executionMode", "JTP");
 		}
 		else {
 //			hcRea.setExecutionMode(Kernel.EXECUTION_MODE.GPU);

@@ -10,6 +10,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -32,6 +34,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import kcore.plugin.alg.param.KcoreParameters;
+import kcore.plugin.biomarker_parallel.BiomarkerResult;
 import kcore.plugin.hc.DirectionType;
 import kcore.plugin.hc.Interaction;
 import kcore.plugin.rcore.sequence.Edge;
@@ -63,6 +66,8 @@ public class Biomaker extends AbstractTask {
 	// map to store r-core
 	private Map<String, Integer> rCore;
 	// map to store adjacency list
+	// arraylist to store biomarker
+	private ArrayList<BiomarkerResult> biomarkerGene = new ArrayList<>();
 	private Map<String, Vector<String>> adjList;
 	// map to store degree
 	private Map<String, Integer> reachability;
@@ -794,23 +799,49 @@ public class Biomaker extends AbstractTask {
 		// write file
 		Path path = Paths.get(OUTPUT);
 		ArrayList<String> lines = new ArrayList<>();
+		for (String vertex : vertexList) {
+			BiomarkerResult result = new BiomarkerResult(vertex, rCore.get(vertex) + 1, hcEntropy.get(vertex));
+			biomarkerGene.add(result);
+		}
+		Collections.sort(biomarkerGene, new Comparator<BiomarkerResult>() {
+	        @Override
+	        public int compare(BiomarkerResult bio1, BiomarkerResult bio2) {
+	        	if(bio1.getrCore() < bio2.getrCore()) {
+	        		return 1;
+	        	}
+	        	else if(bio1.getrCore() > bio2.getrCore()) {
+	        		return -1;
+	        	}
+	        	else {
+	        		if(bio1.getHc() <= bio2.getHc()) {
+	        			return 1;
+	        		}
+	        		else {
+	        			return -1;
+	        		}
+	        	}
+	        }
+	    });
 
-		lines.add("time start: " + start + " - " + "time end: " + end);
 		lines.add("Node\tRCore\tHC");
+		for (BiomarkerResult result : biomarkerGene) {
+			lines.add(String.format("%s\t%d\t%f", result.getName(), result.getrCore(), result.getHc()));
+		}
 //		for (String vertex : vertexList) {
 //			lines.add(String.format("%s\t%d\t%f", vertex, rCore.get(vertex) + 1, hcEntropy.get(vertex)));
 //		}
-		int i = 0;
-		for (Map.Entry<String, Integer> entry : sortedMap.entrySet()) {
-			if (i >= vertexList.size())
-				break;		
-			for (Map.Entry<String, Double> entry1 : hcEntropy.entrySet()) {
-				if (entry1.getKey().equals(entry.getKey())) {	
-					lines.add(String.format("%s\t%d\t%9.8f", entry.getKey(), entry.getValue() + 1, entry1.getValue()));	
-				}
-			}
-			i++;
-		}
+//		int i = 0;
+//		for (Map.Entry<String, Integer> entry : sortedMap.entrySet()) {
+//			if (i >= vertexList.size())
+//				break;		
+//			for (Map.Entry<String, Double> entry1 : hcEntropy.entrySet()) {
+//				if (entry1.getKey().equals(entry.getKey())) {	
+//					lines.add(String.format("%s\t%d\t%9.8f", entry.getKey(), entry.getValue() + 1, entry1.getValue()));	
+//				}
+//			}
+//			i++;
+//		}
+		lines.add("time start: " + start + " - " + "time end: " + end);
 		try {
 			Files.write(path, lines);
 		} catch (IOException e) {

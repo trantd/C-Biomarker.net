@@ -263,7 +263,7 @@ public class hc_algorithm_parallel extends AbstractTask {
 		@SuppressWarnings("deprecation")
 		public void loadData() {
 			if(device == "CPU") {
-				System.setProperty("com.aparapi.executionMode", "CPU");
+				System.setProperty("com.aparapi.executionMode", "JTP");
 			}
 			else {
 				System.setProperty("com.aparapi.executionMode", "GPU");
@@ -355,11 +355,11 @@ public class hc_algorithm_parallel extends AbstractTask {
 			List<String> lines = new ArrayList<>();
 			// sort map by value
 			sortedMap = MapComparator.sortByValue(hc);
-			lines.add("time start: " + start + " - " + "time end: " + end);
 			lines.add("Node\tHC");
 			for (Map.Entry<String, Double> entry : sortedMap.entrySet()) {
 				lines.add(String.format("%s\t%f", entry.getKey(), entry.getValue() + 1));
 			}
+			lines.add("time start: " + start + " - " + "time end: " + end);
 
 			Files.write(path, lines);
 
@@ -371,36 +371,36 @@ public class hc_algorithm_parallel extends AbstractTask {
 				e.printStackTrace();
 			}
 		}
-		public void writeText(String start, String end) {
-			try{
-		        File file =new File(outputFile);
-
-		        if(!file.exists()){
-		           file.createNewFile();
-		        }
-		        List<String> lines = new ArrayList<>();
-		        lines.add("\t\tHC");
-		        for (Map.Entry<String, Double> entry : sortedMap.entrySet()) {
-					lines.add(String.format("\t\t%f", entry.getValue() + 1));
-				}
-		        //Here true is to append the content to file
-		        FileWriter fw = new FileWriter(file.getAbsoluteFile(),true);
-		        //BufferedWriter writer give better performance
-		        BufferedWriter bw = new BufferedWriter(fw);
-		        for (String line : lines) {
-		        	bw.write(line);
-				}
-		        
-		        //Closing BufferedWriter Stream
-		        bw.close();
-		 
-		        System.out.println("Data successfully appended at the end of file");
-		 
-		      }catch(IOException ioe){
-		         System.out.println("Exception occurred:");
-		         ioe.printStackTrace();
-		       }
-		}
+//		public void writeText(String start, String end) {
+//			try{
+//		        File file =new File(outputFile);
+//
+//		        if(!file.exists()){
+//		           file.createNewFile();
+//		        }
+//		        List<String> lines = new ArrayList<>();
+//		        lines.add("\t\tHC");
+//		        for (Map.Entry<String, Double> entry : sortedMap.entrySet()) {
+//					lines.add(String.format("\t\t%f", entry.getValue() + 1));
+//				}
+//		        //Here true is to append the content to file
+//		        FileWriter fw = new FileWriter(file.getAbsoluteFile(),true);
+//		        //BufferedWriter writer give better performance
+//		        BufferedWriter bw = new BufferedWriter(fw);
+//		        for (String line : lines) {
+//		        	bw.write(line);
+//				}
+//		        
+//		        //Closing BufferedWriter Stream
+//		        bw.close();
+//		 
+//		        System.out.println("Data successfully appended at the end of file");
+//		 
+//		      }catch(IOException ioe){
+//		         System.out.println("Exception occurred:");
+//		         ioe.printStackTrace();
+//		       }
+//		}
 
 		// push value to map
 		public void pushMapV(Map<String, Vector<String>> adjList, String start, String end, int weight) {
@@ -494,10 +494,7 @@ public class hc_algorithm_parallel extends AbstractTask {
 
 			taskMonitor.setProgress(0.9);
 			taskMonitor.setStatusMessage("Write result....");
-			if(!bio)
-				writeTextFile(timeStart, timeEnd);
-			else
-				writeText(timeStart, timeEnd);
+			writeTextFile(timeStart, timeEnd);
 			// createColumn();
 
 			taskMonitor.setProgress(1.0);
