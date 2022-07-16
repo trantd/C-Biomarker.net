@@ -216,15 +216,15 @@ public class KcoreParametersPanel extends JPanel implements ColumnCreatedListene
 //		advancedConfigPanel.add(netFilteringMethod,
 //				gridConstraint(1, 2, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL));
 
-		sequenceDevice = new JRadioButton("Auto");
+		sequenceDevice = new JRadioButton("Sequential on CPU");
 //		advancedConfigPanel.add(sequenceDevice,
 //				gridConstraint(0, 3, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL));
 
-		cpuDevice = new JRadioButton("CPU");
+		cpuDevice = new JRadioButton("Parallel on CPU");
 //		advancedConfigPanel.add(cpuDevice,
 //				gridConstraint(0, 4, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL));
 
-		gpuDevice = new JRadioButton("GPU");
+		gpuDevice = new JRadioButton("Parallel on GPU");
 		// set action
 		sequenceDevice.addActionListener(new ActionListener() {
 			@Override
@@ -270,14 +270,14 @@ public class KcoreParametersPanel extends JPanel implements ColumnCreatedListene
 		tabbedPane.addTab("Extension", null, subPanel, "click to show subPanel");
 
 		ButtonGroup btnGroupBio = new ButtonGroup();
-		sequenceBio = new JRadioButton("Auto");
-		cpuBio = new JRadioButton("CPU");
-		gpuBio = new JRadioButton("GPU");
+		sequenceBio = new JRadioButton("Sequential on CPU");
+		cpuBio = new JRadioButton("Parallel on CPU");
+		gpuBio = new JRadioButton("Parallel on GPU");
 		btnGroupBio.add(sequenceBio);
 		btnGroupBio.add(cpuBio);
 		btnGroupBio.add(gpuBio);
 		sequenceBio.setSelected(true);
-		mainPanel.add(new java.awt.Label("Choose device:"),
+		mainPanel.add(new java.awt.Label("Running mode:"),
 				gridConstraint(1, 2, 2, 1, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL));
 		mainPanel.add(sequenceBio, gridConstraint(1, 3, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL));
 		mainPanel.add(cpuBio, gridConstraint(1, 4, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL));
@@ -323,7 +323,7 @@ public class KcoreParametersPanel extends JPanel implements ColumnCreatedListene
 		functionPanel.add(rCore, gridConstraint(3, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.CENTER));
 		functionPanel.add(hc, gridConstraint(4, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.CENTER));
 
-		devicePanel.add(new java.awt.Label("Choose device:"),
+		devicePanel.add(new java.awt.Label("Running mode:"),
 				gridConstraint(1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.CENTER));
 		devicePanel.add(sequenceDevice, gridConstraint(2, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.CENTER));
 		devicePanel.add(cpuDevice, gridConstraint(3, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.CENTER));

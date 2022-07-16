@@ -349,7 +349,7 @@ public class RcoreParallel extends AbstractTask {
 		if(device == "CPU") {
 			System.setProperty("com.aparapi.executionMode", "JTP");
 		}
-		else {
+		else if(device == "GPU") {
 			System.setProperty("com.aparapi.executionMode", "GPU");
 		}
 //		else
@@ -366,12 +366,6 @@ public class RcoreParallel extends AbstractTask {
 			if(vertexBuff.size() > 0) {
 				Range range = Range.create(vertexList.size());
 				RCoreKernel rc = new RCoreKernel(vertexList);
-				if(device == "CPU") {
-					rc.setExecutionMode(Kernel.EXECUTION_MODE.JTP);
-				}
-				else {
-					rc.setExecutionMode(Kernel.EXECUTION_MODE.GPU);
-				}
 				rc.setL(l);
 				rc.setAdjList(adjList);
 //				rc.setReachableList(reachableList);

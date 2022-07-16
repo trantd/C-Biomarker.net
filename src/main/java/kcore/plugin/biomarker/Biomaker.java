@@ -803,25 +803,25 @@ public class Biomaker extends AbstractTask {
 			BiomarkerResult result = new BiomarkerResult(vertex, rCore.get(vertex) + 1, hcEntropy.get(vertex));
 			biomarkerGene.add(result);
 		}
-		Collections.sort(biomarkerGene, new Comparator<BiomarkerResult>() {
-	        @Override
-	        public int compare(BiomarkerResult bio1, BiomarkerResult bio2) {
-	        	if(bio1.getrCore() < bio2.getrCore()) {
-	        		return 1;
-	        	}
-	        	else if(bio1.getrCore() > bio2.getrCore()) {
-	        		return -1;
-	        	}
-	        	else {
-	        		if(bio1.getHc() <= bio2.getHc()) {
-	        			return 1;
-	        		}
-	        		else {
-	        			return -1;
-	        		}
-	        	}
-	        }
-	    });
+//		Collections.sort(biomarkerGene, new Comparator<BiomarkerResult>() {
+//	        @Override
+//	        public int compare(BiomarkerResult bio1, BiomarkerResult bio2) {
+//	        	if(bio1.getrCore() < bio2.getrCore()) {
+//	        		return 1;
+//	        	}
+//	        	else if(bio1.getrCore() > bio2.getrCore()) {
+//	        		return -1;
+//	        	}
+//	        	else {
+//	        		if(bio1.getHc() <= bio2.getHc()) {
+//	        			return 1;
+//	        		}
+//	        		else {
+//	        			return -1;
+//	        		}
+//	        	}
+//	        }
+//	    });
 
 		lines.add("Node\tRCore\tHC");
 		for (BiomarkerResult result : biomarkerGene) {

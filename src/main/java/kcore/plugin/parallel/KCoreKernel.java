@@ -17,7 +17,7 @@ public class KCoreKernel extends Kernel {
 	//k-core
 	private int l;
 	// number of vertex
-	private int i;
+	private AtomicInteger i;
 	// map to store adjacency list
 	private Map<String, Vector<String>> adjList;
 	// map to store degree
@@ -25,60 +25,66 @@ public class KCoreKernel extends Kernel {
 	//array list to store vertex list
 	private ArrayList<String> vertexList;
 	//array list to store adjbuff
-	private ArrayList<String> vertexBuff;
+//	private ArrayList<String> vertexBuff;
 	private int kCore[];
 	private AtomicIntegerArray atomickCore;
-	private CyclicBarrier ba; 
+	private Set<String> visitedList;
 	
+	public Set<String> getVisitedList() {
+		return visitedList;
+	}
+
+	public void setVisitedList(Set<String> visitedList) {
+		this.visitedList = visitedList;
+	}
+
 	public KCoreKernel(Map<String, Integer> degrees) {
 //		super();
 		this.degrees = degrees;
 		Set<String> keySet = this.degrees.keySet();
 		vertexList = new ArrayList<String>(keySet);
+		i = new AtomicInteger(0);
 	}
 
 	@Override
 	public void run() {
-//		ba = new CyclicBarrier(vertexBuff.size());
-		if(getGlobalId() < vertexBuff.size()) {
-			int index = getGlobalId();
-			String vertex = vertexBuff.get(index);
-			Vector<String> adjListV = adjList.get(vertex);
-			for (String adjName : adjListV) {
-				int ind = vertexList.indexOf(adjName);
-				int adjDeg = atomickCore.get(ind);
-				if(adjDeg > l) {
-//					adjDeg = adjDeg - 1;
-//					degrees.replace(adjName, adjDeg);
-					adjDeg = atomickCore.decrementAndGet(ind);
-					if(adjDeg == l) {
-						vertexBuff.add(adjName);
-					}
-					if(adjDeg < l) {
-//						adjDeg = adjDeg + 1;
-//						degrees.replace(adjName, adjDeg);
-						atomickCore.incrementAndGet(ind);
+		int index = getGlobalId();
+		ArrayList<String> vertexBuff = new ArrayList<>();
+		if(atomickCore.get(index) == l && !visitedList.contains(vertexList.get(index))) {
+			vertexBuff.add(vertexList.get(index));
+			visitedList.add(vertexList.get(index));
+		}
+		if(vertexBuff.size() > 0) {
+			int n = vertexBuff.size();
+			for (int j = 0; j < n; j++) {
+				Vector<String> adjListV = adjList.get(vertexBuff.get(j));
+				for (String adj : adjListV) {
+					int id = vertexList.indexOf(adj);
+					if(atomickCore.get(id) > l) {
+						atomickCore.decrementAndGet(id);
+						if(atomickCore.get(id) == l) {
+							if(!visitedList.contains(adj)) {
+								vertexBuff.add(adj);
+								visitedList.add(adj);
+								n++;
+							}
+						}
+						if(atomickCore.get(id) < l) {
+							atomickCore.incrementAndGet(id);
+						}
 					}
 				}
 			}
+			i.addAndGet(vertexBuff.size());
 		}
-//		try {
-//			ba.await();
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (BrokenBarrierException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 	}
 
-	public CyclicBarrier getBa() {
-		return ba;
+	public ArrayList<String> getVertexList() {
+		return vertexList;
 	}
 
-	public void setBa(CyclicBarrier ba) {
-		this.ba = ba;
+	public void setVertexList(ArrayList<String> vertexList) {
+		this.vertexList = vertexList;
 	}
 
 	public AtomicIntegerArray getAtomickCore() {
@@ -90,7 +96,7 @@ public class KCoreKernel extends Kernel {
 	}
 
 	public int getVisitedVertex() {
-		return vertexBuff.size();
+		return i.get();
 	}
 
 	public int[] getkCore() {
@@ -99,14 +105,6 @@ public class KCoreKernel extends Kernel {
 
 	public void setkCore(int[] kCore) {
 		this.kCore = kCore;
-	}
-
-	public int getI() {
-		return i;
-	}
-
-	public void setI(int i) {
-		this.i = i;
 	}
 
 	public int getL() {
@@ -133,11 +131,11 @@ public class KCoreKernel extends Kernel {
 		this.degrees = degrees;
 	}
 
-	public ArrayList<String> getVertexBuff() {
-		return vertexBuff;
-	}
-
-	public void setVertexBuff(ArrayList<String> vertexBuff) {
-		this.vertexBuff = vertexBuff;
-	}
+//	public ArrayList<String> getVertexBuff() {
+//		return vertexBuff;
+//	}
+//
+//	public void setVertexBuff(ArrayList<String> vertexBuff) {
+//		this.vertexBuff = vertexBuff;
+//	}
 }

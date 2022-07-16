@@ -59,6 +59,7 @@ public class RCoreKernel extends Kernel {
 					}
 					if(adjRea < l) {
 						++adjRea;
+//						usesAtomic32(reachability.replace(vert, adjRea));
 						reachability.replace(vert, adjRea);
 					}
 				}

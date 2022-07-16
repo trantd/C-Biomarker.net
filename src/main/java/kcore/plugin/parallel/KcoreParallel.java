@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -283,61 +284,61 @@ public class KcoreParallel extends AbstractTask {
 		if(device == "CPU") {
 			System.setProperty("com.aparapi.executionMode", "JTP");
 		}
-		else {
+		else if(device == "GPU") {
 			System.setProperty("com.aparapi.executionMode", "GPU");
 		}
 			
-//		else
-//			kc.setExecutionModeWithoutFallback(Kernel.EXECUTION_MODE.GPU);
 		int i = 0;
 		int l = 0;
+		Set<String> visitedList = new HashSet<>();
 		while (i < vertexList.size()) {
-			System.out.println("core " + l);
-			for (int j = 0; j < vertexList.size(); j++) {
-				String vertName = vertexList.get(j).getVertex();
-				if(atomickCore.get(j) == l) {
-					vertexBuff.add(vertName);
-				}
-			}
-			if(vertexBuff.size() > 0) {
-				Range range = Range.create(vertexList.size());
-				KCoreKernel kc = new KCoreKernel(degrees);
-				kc.setL(l);
-				kc.setAdjList(adjList);
-//				kc.setDegrees(degrees);
-				kc.setVertexBuff(vertexBuff);
-				kc.setAtomickCore(atomickCore);
-//				kc.setBa(ba);
-//				System.out.println("atomic: " + atomickCore.toString());
-				
-				kc.execute(range);
-//				degrees = kc.getDegrees();
-//				kCore = kc.getkCore();
-				atomickCore = kc.getAtomickCore();
-				i += kc.getVisitedVertex();
-//				CyclicBarrier ba = new CyclicBarrier(i);
-//				System.out.println("new atomic: " + atomickCore.toString());
-//				try {
-//					ba.await();
-//				} catch (InterruptedException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				} catch (BrokenBarrierException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-				kc.dispose();
-				vertexBuff.clear();
-			}
+//			System.out.println("core: " + l);
+			Range range = Range.create(vertexList.size());
+			KCoreKernel kc = new KCoreKernel(degrees);
+			kc.setL(l);
+			kc.setAdjList(adjList);
+//			kc.setDegrees(degrees);
+//			kc.setVertexBuff(vertexBuff);
+			kc.setAtomickCore(atomickCore);
+			kc.setVisitedList(visitedList);
+			
+			kc.execute(range);
+//			degrees = kc.getDegrees();
+//			kCore = kc.getkCore();
+			atomickCore = kc.getAtomickCore();
+			i += kc.getVisitedVertex();
+			visitedList = kc.getVisitedList();
+			kc.dispose();
+			vertexBuff.clear();
 			l++;
 		}
-		
-//		KernelPreferences preferences = KernelManager.instance().getDefaultPreferences();
-//	      System.out.println("-- Devices in preferred order --");
-//	      for (Device device : preferences.getPreferredDevices(null)) {
-//	          System.out.println("----------");
-//	          System.out.println(device);
-//	      }
+//		System.out.println("vertex: " + i);
+//		while (i < vertexList.size()) {
+//			for (int j = 0; j < vertexList.size(); j++) {
+//				String vertName = vertexList.get(j).getVertex();
+//				if(atomickCore.get(j) == l) {
+//					vertexBuff.add(vertName);
+//				}
+//			}
+//			if(vertexBuff.size() > 0) {
+//				Range range = Range.create(vertexList.size());
+//				KCoreKernel kc = new KCoreKernel(degrees);
+//				kc.setL(l);
+//				kc.setAdjList(adjList);
+////				kc.setDegrees(degrees);
+//				kc.setVertexBuff(vertexBuff);
+//				kc.setAtomickCore(atomickCore);
+//				
+//				kc.execute(range);
+////				degrees = kc.getDegrees();
+////				kCore = kc.getkCore();
+//				atomickCore = kc.getAtomickCore();
+//				i += kc.getVisitedVertex();
+//				kc.dispose();
+//				vertexBuff.clear();
+//			}
+//			l++;
+//		}
 	}
 
 	@Override
@@ -376,10 +377,13 @@ public class KcoreParallel extends AbstractTask {
 
 	}
 
-	@Override
-	public void cancel() {
-		super.cancel();
-		cancelled = true;
-
-	}
+//	@Override
+//	public void cancel() {
+//		super.cancel();
+//		cancelled = true;
+////		if (cancelled == true) {
+////		JOptionPane.showMessageDialog(null, "Compute K-core Error, open text file to see the result!",
+////				"Infor", JOptionPane.INFORMATION_MESSAGE);
+////	}
+//	}
 }

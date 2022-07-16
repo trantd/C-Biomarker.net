@@ -1,71 +1,72 @@
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\Interaction.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\Biomarker_algorithm_parallel.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\sequence\MapComparator.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\Edge.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\Node.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\PathFinder.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\parallel\DirectionType.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\Vertex.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\MapComparator.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\Vertex.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\parallel\Vertex.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\Edge.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\sequence\Vertex.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\Triple.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\ui\NetworkSelectorPanel.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\service\TaskFactory.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\Dijkstra.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\alg\ConvertKegg.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\Biomaker.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc\Interaction.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc\Triple.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc\DirectionType.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\hcKernel_closeness.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\sequence\Vertex.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\alg\DirectionType.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\parallel\MapComparator.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\sequence\Edge.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\DirectionType.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\BiomarkerResult.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\Edge1.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\sequence\Kcore.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\parallel\KCoreKernel.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc\hc_algorithm.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\service\ServicesUtil.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\RCoreKernel.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\parallel\RCoreKernel.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\EntropyModel.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\hcKernel_reachability.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\hc_algorithm_parallel.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\Edge.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\alg\param\NetFilteringMethod.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\sequence\MapComparator.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\MapComparator.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\sequence\RCore.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\sequence\Edge.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\parallel\Edge.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\alg\KcoreParametersPanel.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\BiomarkerResult.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\hcKernel_closeness.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc\Dijkstra.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\parallel\Edge.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\ui\UI.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc\EntropyModel.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\alg\param\KcoreParameters.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\hcKernel_reachability.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\Vertex.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\alg\Edge.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\parallel\Atomic.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\parallel\Vertex.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\alg\KcoreRunner.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\ui\KcorePanelComponent.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\parallel\MapComparator.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\Vert.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\parallel\RcoreParallel.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\Vert.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc\Node.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\MapComparator.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\parallel\KcoreParallel.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\Edge1.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\Activator.java
-D:\Thuc Tap\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\PathFinder.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\RCoreKernel.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\Vert.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\sequence\RCore.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\alg\KcoreRunner.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\Vertex.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\parallel\Edge.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\Edge.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc\Interaction.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\parallel\RCoreKernel.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\ui\KcorePanelComponent.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\sequence\MapComparator.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc\Dijkstra.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc\EntropyModel.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\Biomaker.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\Vertex.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\parallel\KCoreKernel.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\PathFinder.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\sequence\Kcore.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\alg\KcoreParametersPanel.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\sequence\Edge.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\BiomarkerResult.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\alg\Edge.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\Biomarker_algorithm_parallel.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\KCoreKernel.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\parallel\Vertex.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\alg\param\KcoreParameters.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\MapComparator.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\parallel\Atomic.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\Edge.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\Vert.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\MapComparator.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc\Triple.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\hcKernel_closeness.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\sequence\MapComparator.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\Node.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\PathFinder.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\parallel\MapComparator.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\Interaction.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\hc_algorithm_parallel.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\BiomarkerResult.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\parallel\KcoreParallel.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\parallel\MapComparator.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\service\TaskFactory.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\MapComparator.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\DirectionType.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc\Node.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\Dijkstra.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\hcKernel_reachability.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\alg\ConvertKegg.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\sequence\Vertex.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\Triple.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\alg\param\NetFilteringMethod.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\service\ServicesUtil.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\hcKernel_closeness.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc\hc_algorithm.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\EntropyModel.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\ui\NetworkSelectorPanel.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc\DirectionType.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\ui\UI.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\sequence\Vertex.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\hc_parallel\Edge1.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker\Edge.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\sequence\Edge.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\Edge1.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\alg\DirectionType.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\parallel\Edge.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\parallel\DirectionType.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\parallel\RcoreParallel.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\Activator.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\hcKernel_reachability.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\biomarker_parallel\Vertex.java
+C:\Users\Administrator\Downloads\phan mem\C-Biomarker.net\src\main\java\kcore\plugin\rcore\parallel\Vertex.java
