@@ -88,6 +88,11 @@ public class RCore extends AbstractTask {
 
 	public DirectionType getType(List<String> type) {
 		DirectionType direction = DirectionType.UNDIRECTED;
+		
+		if (type == null) {
+			return direction;
+		}
+		
 		for (String temp : type) {
 			if (temp.contains("activation") || temp.contains("expression") || temp.contains("inhibition")
 					|| temp.contains("indirect_effect") || temp.contains("via_compound")
