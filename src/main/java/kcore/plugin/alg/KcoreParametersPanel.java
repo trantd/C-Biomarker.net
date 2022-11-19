@@ -266,7 +266,7 @@ public class KcoreParametersPanel extends JPanel implements ColumnCreatedListene
 		mainPanel.setBorder(javax.swing.BorderFactory.createLineBorder(null, 1));
 		subPanel = new javax.swing.JPanel(new java.awt.GridBagLayout());
 		subPanel.setBorder(javax.swing.BorderFactory.createLineBorder(null, 1));
-		tabbedPane.addTab("Biomarker nodes", null, mainPanel, "click to show mainPanel");
+		tabbedPane.addTab("Biomarker Nodes", null, mainPanel, "click to show mainPanel");
 		tabbedPane.addTab("Extension", null, subPanel, "click to show subPanel");
 
 		ButtonGroup btnGroupBio = new ButtonGroup();

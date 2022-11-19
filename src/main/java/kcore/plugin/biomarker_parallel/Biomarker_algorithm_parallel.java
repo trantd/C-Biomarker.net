@@ -297,12 +297,14 @@ public class Biomarker_algorithm_parallel extends AbstractTask {
 		String[] vertexs = new String[vertexList.size()];
 		vertexList.toArray(vertexs);
 		
+		// writeFile("/Users/trankien/Desktop/aaaaa.txt", "load 1");
 		//compute reachability
 		hcKernel_reachability hcRea = new hcKernel_reachability();
 		hcRea.setAdjList(adjList);
 		hcRea.setVertextList(vertexs);
 		
 		hcRea.execute(range);
+		// writeFile("/Users/trankien/Desktop/aaaaa.txt", "load 2");
 		reachability = hcRea.getReachability();
 		reachableList = hcRea.getReachableList();
 		hcRea.dispose();	
@@ -347,11 +349,13 @@ public class Biomarker_algorithm_parallel extends AbstractTask {
 					adjListRcore.get(vertex).add(vert);
 				}
 			}
-		} 
+		}
+		// writeFile("/Users/trankien/Desktop/aaaaa.txt", "load 3");
 		if(dir == 1)
 			computeRcore();
 		else
 			computeKcore();
+		// writeFile("/Users/trankien/Desktop/aaaaa.txt", "load 4");
 	}
 	public void computeRcore() {
 //		compute r-core
@@ -496,7 +500,7 @@ public class Biomarker_algorithm_parallel extends AbstractTask {
 	public int countChildNode(String node, String source) {
 		int count = 0;
 		visited.add(node);
-		if (adjList.get(node) != null) {
+		if (adjList.get(node) != null && adjList.get(node).size() > 0) {
 			for (String vertex : adjList.get(node)) {
 				if (!visited.contains(vertex)) {
 					if (adjList.get(vertex) != null && adjList.get(vertex).size() > 0) {
@@ -508,7 +512,7 @@ public class Biomarker_algorithm_parallel extends AbstractTask {
 					pushMapS(reachableList, source, vertex);
 				}
 			}
-		}
+		} else return 0;
 		return count;
 	}
 
@@ -536,7 +540,9 @@ public class Biomarker_algorithm_parallel extends AbstractTask {
 
 		taskMonitor.setProgress(0.1);
 		taskMonitor.setStatusMessage("Initing parameters ....");
+		// writeFile("/Users/trankien/Desktop/aaaaa.txt", "init");
 		init();
+		// writeFile("/Users/trankien/Desktop/aaaaa.txt", "init1");
 
 		taskMonitor.setProgress(0.3);
 		taskMonitor.setStatusMessage("Computing Biomarker gene ....");
@@ -544,7 +550,9 @@ public class Biomarker_algorithm_parallel extends AbstractTask {
 	    Date now = new Date();
 	    timeStart = sdfDate.format(now);
 	    System.out.println("time start: " + timeStart);
+		// writeFile("/Users/trankien/Desktop/aaaaa.txt", "load data");
 		loadData();
+		// writeFile("/Users/trankien/Desktop/aaaaa.txt", "load data1");
 	    Date now1 = new Date();
 	    timeEnd = sdfDate.format(now1);
 	    System.out.println("time end: " + timeEnd);
@@ -570,4 +578,15 @@ public class Biomarker_algorithm_parallel extends AbstractTask {
 		cancelled = true;
 	}
 
+	public void writeFile(String output, String message) {
+		Path path = Paths.get(output);
+		try {
+			java.nio.file.Files.write(path, 
+                          message.getBytes(java.nio.charset.StandardCharsets.UTF_8),
+                          java.nio.file.StandardOpenOption.CREATE,
+                          java.nio.file.StandardOpenOption.TRUNCATE_EXISTING);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

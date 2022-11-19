@@ -333,7 +333,7 @@ public class RcoreParallel extends AbstractTask {
 	public int countChildNode(String node, String source) {
 		int count = 0;
 		visited.add(node);
-		if (ReaAdjList.get(node) != null) {
+		if (ReaAdjList.get(node) != null && ReaAdjList.get(node).size() > 0) {
 			for (String vertex : ReaAdjList.get(node)) {
 				if (!visited.contains(vertex)) {
 					if (ReaAdjList.get(vertex) != null && ReaAdjList.get(vertex).size() > 0) {
@@ -345,7 +345,7 @@ public class RcoreParallel extends AbstractTask {
 					pushMapS(reachableList, source, vertex);
 				}
 			}
-		}
+		} else return 0;
 		return count;
 	}
 	// compute

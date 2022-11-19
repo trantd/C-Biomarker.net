@@ -31,7 +31,7 @@ public class hcKernel_reachability extends Kernel {
 	public int countChildNode(String node, String source, List<String> visited) {
 		int count = 0;
 		visited.add(node);
-		if (adjList.get(node) != null) {
+		if (adjList.get(node) != null && adjList.get(node).size() > 0) {
 			for (String vertex : adjList.get(node)) {
 				if (!visited.contains(vertex)) {
 					if (adjList.get(vertex) != null && adjList.get(vertex).size() > 0) {
@@ -42,7 +42,7 @@ public class hcKernel_reachability extends Kernel {
 					pushMapS(reachableList, source, vertex);
 				}
 			}
-		}
+		} else return 0;
 		return count;
 	}
 	public void pushMapS(Map<String, Set<String>> adjList, String start, String end) {

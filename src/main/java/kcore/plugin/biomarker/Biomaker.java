@@ -667,7 +667,7 @@ public class Biomaker extends AbstractTask {
 	public int countChildNode(String node, String source) {
 		int count = 0;
 		visited.add(node);
-		if (adjList.get(node) != null) {
+		if (adjList.get(node) != null && adjList.get(node).size() > 0) {
 			for (String vertex : adjList.get(node)) {
 				if (!visited.contains(vertex)) {
 					if (adjList.get(vertex) != null && adjList.get(vertex).size() > 0) {
@@ -678,7 +678,7 @@ public class Biomaker extends AbstractTask {
 					pushMapS(reachableList, source, vertex);
 				}
 			}
-		}
+		} else return 0;
 		return count;
 	}
 
