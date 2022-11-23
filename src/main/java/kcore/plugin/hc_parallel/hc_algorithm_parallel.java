@@ -40,12 +40,14 @@ public class hc_algorithm_parallel extends AbstractTask {
 	private static final Logger logger = LoggerFactory.getLogger(hc_algorithm_parallel.class);
 	private static String device;
 	private boolean bio;
+	private boolean isBio;
 	
-	public hc_algorithm_parallel(KcoreParameters params, String path, String device, boolean bio) {
+	public hc_algorithm_parallel(KcoreParameters params, String path, String device, boolean bio, boolean isBio) {
 		this.params = params;
 		this.outputFile = path;
 		hc_algorithm_parallel.device = device;
 		this.bio = bio;
+		this.isBio = isBio;
 	}
 	static {
 		System.setProperty("com.aparapi.dumpProfilesOnExit", "true");
@@ -493,14 +495,15 @@ public class hc_algorithm_parallel extends AbstractTask {
 		    System.out.println("time end: " + timeEnd);
 		    
 			taskMonitor.setProgress(0.8);
-			taskMonitor.setStatusMessage("Computing R-core ....");
+			taskMonitor.setStatusMessage("Computing HC parallel on "+ this.device+ "....");
 
 			compute();
-
-			taskMonitor.setProgress(0.9);
-			taskMonitor.setStatusMessage("Write result....");
-			writeTextFile(timeStart, timeEnd);
-			// createColumn();
+			
+			if(isBio == false) {
+				taskMonitor.setProgress(0.9);
+				taskMonitor.setStatusMessage("Write result....");
+				writeTextFile(timeStart, timeEnd);
+			}
 
 			taskMonitor.setProgress(1.0);
 			taskMonitor.setStatusMessage("Compute success!");

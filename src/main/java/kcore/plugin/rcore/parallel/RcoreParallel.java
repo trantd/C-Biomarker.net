@@ -42,11 +42,13 @@ public class RcoreParallel extends AbstractTask {
 		System.setProperty("com.aparapi.enableShowGeneratedOpenCL", "false");
 	}
 	private static String device;
+	private boolean isBio;
 	 
-	public RcoreParallel(KcoreParameters params, String path, String device) {
+	public RcoreParallel(KcoreParameters params, String path, String device, boolean isBio) {
 		this.params = params;
 		this.outputFile = path;
 		RcoreParallel.device = device;
+		this.isBio = isBio;
 	}
 
 	private String inputFile;
@@ -407,7 +409,7 @@ public class RcoreParallel extends AbstractTask {
 		loadData();
 
 		taskMonitor.setProgress(0.6);
-		taskMonitor.setStatusMessage("Computing R-core GPU ....");
+		taskMonitor.setStatusMessage("Computing R-core parallel on "+ this.device+ "....");
 		
 		SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");//dd/MM/yyyy
 	    Date now = new Date();
@@ -418,9 +420,11 @@ public class RcoreParallel extends AbstractTask {
 	    timeEnd = sdfDate.format(now1);
 	    System.out.println("time end: " + timeEnd);
 		
-		taskMonitor.setProgress(0.9);
-		taskMonitor.setStatusMessage("Write result....");
-		writeTextFile(timeStart, timeEnd);
+	    if(this.isBio == false) {
+	    	taskMonitor.setProgress(0.9);
+			taskMonitor.setStatusMessage("Write result....");
+			writeTextFile(timeStart, timeEnd);
+	    }
 
 		taskMonitor.setProgress(1.0);
 		taskMonitor.setStatusMessage("Compute success!");
@@ -435,5 +439,9 @@ public class RcoreParallel extends AbstractTask {
 //			JOptionPane.showMessageDialog(null, "Compute R-core GPU Success, open text file to see the result!",
 //					"Infor", JOptionPane.INFORMATION_MESSAGE);
 //		}
+	}
+	
+	public Set<String> getVertexList() {
+		return vertexList;
 	}
 }

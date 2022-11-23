@@ -1,8 +1,5 @@
 package kcore.plugin.alg;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.swing.JOptionPane;
 
 import kcore.plugin.alg.param.KcoreParameters;
@@ -14,8 +11,8 @@ import kcore.plugin.parallel.KcoreParallel;
 import kcore.plugin.rcore.parallel.RcoreParallel;
 import kcore.plugin.rcore.sequence.RCore;
 import kcore.plugin.sequence.Kcore;
-import kcore.plugin.service.TaskFactory;
 import kcore.plugin.service.ServicesUtil;
+import kcore.plugin.service.TaskFactory;
 
 public class KcoreRunner {
 
@@ -54,7 +51,7 @@ public class KcoreRunner {
 			KcoreParallel alg = new KcoreParallel(params,this.path,this.device);
 			TaskFactory factory = new TaskFactory(alg);
 			ServicesUtil.taskManagerServiceRef.execute(factory.createTaskIterator());
-			alg.cancel();
+//			alg.cancel();
 		} catch (final Exception e) {
 			e.printStackTrace(System.err);
 			JOptionPane.showMessageDialog(ServicesUtil.cySwingApplicationServiceRef.getJFrame(),
@@ -71,10 +68,10 @@ public class KcoreRunner {
 	
 	public void runRcore() {
 		try {
-			RCore alg = new RCore(params,this.path);
+			RCore alg = new RCore(params,this.path, false);
 			TaskFactory factory = new TaskFactory(alg);
 			ServicesUtil.taskManagerServiceRef.execute(factory.createTaskIterator());
-			alg.cancel();
+//			alg.cancel();
 		} catch (final Exception e) {
 			e.printStackTrace(System.err);
 			JOptionPane.showMessageDialog(ServicesUtil.cySwingApplicationServiceRef.getJFrame(),
@@ -91,10 +88,10 @@ public class KcoreRunner {
 	
 	public void runRcoreGPU() {
 		try {
-			RcoreParallel alg = new RcoreParallel(params,this.path, this.device);
+			RcoreParallel alg = new RcoreParallel(params,this.path, this.device, false);
 			TaskFactory factory = new TaskFactory(alg);
 			ServicesUtil.taskManagerServiceRef.execute(factory.createTaskIterator());
-			alg.cancel();
+//			alg.cancel();
 		} catch (final Exception e) {
 			e.printStackTrace(System.err);
 			JOptionPane.showMessageDialog(ServicesUtil.cySwingApplicationServiceRef.getJFrame(),
@@ -111,10 +108,10 @@ public class KcoreRunner {
 	
 	public void runHc() {
 		try {
-			hc_algorithm alg = new hc_algorithm(params,this.path);
+			hc_algorithm alg = new hc_algorithm(params,this.path, false);
 			TaskFactory factory = new TaskFactory(alg);
 			ServicesUtil.taskManagerServiceRef.execute(factory.createTaskIterator());
-			alg.cancel();
+//			alg.cancel();
 		} catch (final Exception e) {
 			e.printStackTrace(System.err);
 			JOptionPane.showMessageDialog(ServicesUtil.cySwingApplicationServiceRef.getJFrame(),
@@ -130,10 +127,10 @@ public class KcoreRunner {
 	}
 	public void runHcParallel(boolean bio) {
 		try {
-			hc_algorithm_parallel alg = new hc_algorithm_parallel(params,this.path, this.device, bio);
+			hc_algorithm_parallel alg = new hc_algorithm_parallel(params,this.path, this.device, bio, false);
 			TaskFactory factory = new TaskFactory(alg);
 			ServicesUtil.taskManagerServiceRef.execute(factory.createTaskIterator());
-			alg.cancel();
+//			alg.cancel();
 		} catch (final Exception e) {
 			e.printStackTrace(System.err);
 			JOptionPane.showMessageDialog(ServicesUtil.cySwingApplicationServiceRef.getJFrame(),
@@ -153,7 +150,7 @@ public class KcoreRunner {
 			Biomaker alg = new Biomaker(params, this.path);
 			TaskFactory factory2 = new TaskFactory(alg);
 			ServicesUtil.taskManagerServiceRef.execute(factory2.createTaskIterator());
-			alg.cancel();
+//			alg.cancel();
 		} catch (final Exception e) {
 			e.printStackTrace(System.err);
 			JOptionPane.showMessageDialog(ServicesUtil.cySwingApplicationServiceRef.getJFrame(),
@@ -172,7 +169,7 @@ public class KcoreRunner {
 			Biomarker_algorithm_parallel alg = new Biomarker_algorithm_parallel(params, this.path,this.device);
 			TaskFactory factory = new TaskFactory(alg);
 			ServicesUtil.taskManagerServiceRef.execute(factory.createTaskIterator());
-			alg.cancel();
+//			alg.cancel();
 		} catch (final Exception e) {
 			e.printStackTrace(System.err);
 			JOptionPane.showMessageDialog(ServicesUtil.cySwingApplicationServiceRef.getJFrame(),
