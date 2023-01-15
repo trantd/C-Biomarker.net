@@ -1,0 +1,86 @@
+Start	End
+1. ngô mai an	5. đỗ phương anh
+1. ngô mai an	10. phạm trâm anh
+1. ngô mai an	13. nguyễn hoàng quỳnh chi
+1. ngô mai an	19. phạm mai hương
+1. ngô mai an	26. phạm khánh ly
+1. ngô mai an	33. đặng minh thảo
+1. ngô mai an	34. nguyễn anh thư
+2. bùi phương anh	4. đinh diệu anh
+2. bùi phương anh	13. nguyễn hoàng quỳnh chi
+2. bùi phương anh	19. phạm mai hương
+2. bùi phương anh	20. bùi nam khánh
+2. bùi phương anh	28. đỗ trân huyền my
+2. bùi phương anh	33. đặng minh thảo
+3. chử quang anh	8. nguyễn vũ đức anh
+3. chử quang anh	11. hoàng gia bảo
+3. chử quang anh	17. dương minh hiếu
+3. chử quang anh	18. nguyễn duy minh hoàng
+3. chử quang anh	20. bùi nam khánh
+4. đinh diệu anh	5. đỗ phương anh
+4. đinh diệu anh	7. nguyễn hiền anh
+5. đỗ phương anh	7. nguyễn hiền anh
+5. đỗ phương anh	10. phạm trâm anh
+5. đỗ phương anh	12. lê thị bích
+5. đỗ phương anh	19. phạm mai hương
+5. đỗ phương anh	26. phạm khánh ly
+6. hoàng mai anh	14. trần vũ xuyến chi
+7. nguyễn hiền anh	16. trần phạm ánh dương
+8. nguyễn vũ đức anh	11. hoàng gia bảo
+8. nguyễn vũ đức anh	18. nguyễn duy minh hoàng
+8. nguyễn vũ đức anh	32. bùi tuấn phương
+8. nguyễn vũ đức anh	40. nguyễn minh quân
+9. phạm châu anh	30. khuất linh nhi
+9. phạm châu anh	31. lê hồng hà nhi
+9. phạm châu anh	36. mai trần hà vy
+10. phạm trâm anh	12. lê thị bích
+10. phạm trâm anh	26. phạm khánh ly
+11. hoàng gia bảo	16. trần phạm ánh dương
+11. hoàng gia bảo	20. bùi nam khánh
+12. lê thị bích	26. phạm khánh ly
+13. nguyễn hoàng quỳnh chi	14. trần vũ xuyến chi
+13. nguyễn hoàng quỳnh chi	26. phạm khánh ly
+14. trần vũ xuyến chi	16. trần phạm ánh dương
+14. trần vũ xuyến chi	25. trần thùy linh
+14. trần vũ xuyến chi	29. nguyễn minh ngọc
+14. trần vũ xuyến chi	39. nguyễn minh tâm
+15. vũ thế duy	19. phạm mai hương
+15. vũ thế duy	20. bùi nam khánh
+15. vũ thế duy	33. đặng minh thảo
+16. trần phạm ánh dương	17. dương minh hiếu
+16. trần phạm ánh dương	18. nguyễn duy minh hoàng
+16. trần phạm ánh dương	25. trần thùy linh
+16. trần phạm ánh dương	30. khuất linh nhi
+16. trần phạm ánh dương	36. mai trần hà vy
+16. trần phạm ánh dương	39. nguyễn minh tâm
+17. dương minh hiếu	18. nguyễn duy minh hoàng
+18. nguyễn duy minh hoàng	23. lê diệu linh
+18. nguyễn duy minh hoàng	32. bùi tuấn phương
+18. nguyễn duy minh hoàng	38. đỗ hải yến
+19. phạm mai hương	20. bùi nam khánh
+19. phạm mai hương	28. đỗ trân huyền my
+19. phạm mai hương	33. đặng minh thảo
+20. bùi nam khánh	33. đặng minh thảo
+21. nguyễn minh khuê	24. phan hà linh
+21. nguyễn minh khuê	37. nguyễn lê hà vy
+21. nguyễn minh khuê	40. nguyễn minh quân
+22. trần bằng kiện	40. nguyễn minh quân
+23. lê diệu linh	38. đỗ hải yến
+24. phan hà linh	40. nguyễn minh quân
+25. trần thùy linh	29. nguyễn minh ngọc
+26. phạm khánh ly	28. đỗ trân huyền my
+27. đỗ ngọc minh	32. bùi tuấn phương
+27. đỗ ngọc minh	34. nguyễn anh thư
+27. đỗ ngọc minh	35. vũ minh trang
+29. nguyễn minh ngọc	30. khuất linh nhi
+29. nguyễn minh ngọc	36. mai trần hà vy
+29. nguyễn minh ngọc	39. nguyễn minh tâm
+30. khuất linh nhi	31. lê hồng hà nhi
+30. khuất linh nhi	36. mai trần hà vy
+31. lê hồng hà nhi	36. mai trần hà vy
+32. bùi tuấn phương	34. nguyễn anh thư
+32. bùi tuấn phương	35. vũ minh trang
+34. nguyễn anh thư	35. vũ minh trang
+36. mai trần hà vy	38. đỗ hải yến
+36. mai trần hà vy	39. nguyễn minh tâm
+37. nguyễn lê hà vy	40. nguyễn minh quân

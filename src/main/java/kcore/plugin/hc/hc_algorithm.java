@@ -71,10 +71,12 @@ public class hc_algorithm extends AbstractTask {
 	
 	private String timeStart;
 	private String timeEnd;
+	private boolean isBio;
 
-	public hc_algorithm(KcoreParameters params, String path) {
+	public hc_algorithm(KcoreParameters params, String path, boolean isBio) {
 		this.params = params;
 		this.OUTPUT = path;
+		this.isBio = isBio;
 	}
 
 	public hc_algorithm() {
@@ -282,6 +284,10 @@ public class hc_algorithm extends AbstractTask {
 
 	public static String getOUTPUT() {
 		return OUTPUT;
+	}
+	
+	public Map<String, Double> getHcEntropy() {
+		return hcEntropy;
 	}
 
 	public static void setOUTPUT(String oUTPUT) {
@@ -560,11 +566,13 @@ public class hc_algorithm extends AbstractTask {
 	    Date now1 = new Date();
 	    timeEnd = sdfDate.format(now1);
 	    System.out.println("time end: " + timeEnd);
-
-		taskMonitor.setProgress(0.9);
-		taskMonitor.setStatusMessage("Write result....");
-		writeFile(timeStart, timeEnd);
-		// createColumn();
+	    
+	    if(this.isBio == false) {
+	    	taskMonitor.setProgress(0.9);
+			taskMonitor.setStatusMessage("Write result....");
+			writeFile(timeStart, timeEnd);
+	    }
+		
 		taskMonitor.setProgress(1.0);
 		taskMonitor.setStatusMessage("Compute success!");
 

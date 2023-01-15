@@ -74,6 +74,7 @@ public class Biomarker_algorithm_parallel extends AbstractTask {
 	
 	@Override
 	public void run(TaskMonitor taskMonitor) throws Exception {
+		try {
 		taskMonitor.setProgress(0.0);
 		taskMonitor.setStatusMessage("Searching modules ....");
 		System.gc();
@@ -82,6 +83,16 @@ public class Biomarker_algorithm_parallel extends AbstractTask {
 		taskMonitor.setProgress(0.9);
 		taskMonitor.setStatusMessage("Write biomarker result....");
 		writeFile(rc, hc);
+
+		} catch(Exception e) {
+			StringBuilder sb = new StringBuilder();
+			for (StackTraceElement element : e.getStackTrace()) {
+				sb.append(element);
+				sb.append("\n");
+			}
+			String stackTrace = sb.toString();
+			taskMonitor.setStatusMessage(stackTrace);
+		}
 	}
 
 	@Override

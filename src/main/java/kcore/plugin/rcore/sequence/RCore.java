@@ -75,15 +75,16 @@ public class RCore extends AbstractTask {
 	
 	private String timeStart;
 	private String timeEnd;
+	private boolean isBio;
 
 	public RCore() {
 		init();
 	}
 
-	public RCore(KcoreParameters params, String path) {
+	public RCore(KcoreParameters params, String path, boolean isBio) {
 		this.params = params;
 		this.outputFile = path;
-		// init();
+		this.isBio = isBio;
 	}
 
 	public DirectionType getType(List<String> type) {
@@ -386,6 +387,10 @@ public class RCore extends AbstractTask {
 	public void setVertexList(Set<String> vertexList) {
 		this.vertexList = vertexList;
 	}
+	
+	public Map<String, Integer> getRcore() {
+		return rCore;
+	}
 
 	@Override
 	public void run(TaskMonitor taskMonitor) throws Exception {
@@ -414,10 +419,11 @@ public class RCore extends AbstractTask {
 	    timeEnd = sdfDate.format(now1);
 	    System.out.println("time end: " + timeEnd);
 
-		taskMonitor.setProgress(0.9);
-		taskMonitor.setStatusMessage("Write result....");
-		writeTextFile(timeStart, timeEnd);
-		// createColumn();
+	    if(this.isBio == false) {
+	    	taskMonitor.setProgress(0.7);
+			taskMonitor.setStatusMessage("Write result....");
+			writeTextFile(timeStart, timeEnd);
+	    }
 
 		taskMonitor.setProgress(1.0);
 		taskMonitor.setStatusMessage("Compute success!");
